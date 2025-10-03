@@ -5,14 +5,11 @@ type HeaderParams = {
     subtext?: string;
 }
 
-export function Header({ headerText, subtext=""}: HeaderParams) {
-    return (
-        <header>
-            <h1 className="text-5xl font-bold mb-6">{headerText}</h1>
-            <p className="text-lg items-center justify-center mb-10 max-w-xl mx-auto">
-                {subtext}
-            </p>
-        
-        </header>
-    );
+export function Header({ headerText, subtext }: { headerText: string; subtext: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center text-center space-y-2">
+      <h1 className="text-4xl font-bold">{headerText}</h1>
+      <p className="text-lg">{subtext}</p>
+    </div>
+  );
 }
