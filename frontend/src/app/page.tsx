@@ -33,13 +33,8 @@ export default function Home() {
       <CustomImage
         src="/images/lightbug.png"
         alt="Lightbug"
-<<<<<<< Updated upstream
-        width={500}
-        height={500}
-=======
         width={450}
         height={450}
->>>>>>> Stashed changes
         position="absolute"
         top={0}
         right={555}

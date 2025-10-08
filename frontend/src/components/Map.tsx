@@ -1,7 +1,10 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import {GET} from '../app/api/locations/route';
+
 
 // Fix missing marker icons (Leaflet path issue in React builds)
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -11,8 +14,36 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
+
+
 export function Map() {
-  const paTurnpikeCenter = [40.5, -77.5]; // approximate PA center
+  const [locations, setLocations] = useState<[]>([]);
+  const [loading, setLoading] = useState(true);
+  const paTurnpikeCenter = [40.5, -77.5];  
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch("/api/locations");
+        const data: [] = await res.json();
+        setLocations(data);
+      } catch (err) {
+        console.error("Error fetching locations:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading map...</p>;
+  
+  //const response = GET();
+
+
+  // Get the data array from api 
+  // call GET() from /api/locations/route yadayada
 
   return (
     <MapContainer
@@ -27,12 +58,13 @@ export function Map() {
       />
 
       {/* Example marker */}
-      <Marker position={[40.0667, -75.29]}>
-        <Popup>
-          <h3>King of Prussia Service Plaza</h3>
-          <p>Opened in 1950s — a key stop on the original PA Turnpike.</p>
-        </Popup>
-      </Marker>
+      {/* TODO: Replace with markers from response */}
+       <Marker position={paTurnpikeCenter}>
+            <Popup>
+            <h3>sfb</h3>
+            <p>safb</p>
+            </Popup>
+        </Marker>   
     </MapContainer>
   );
 }

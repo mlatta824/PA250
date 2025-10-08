@@ -1,4 +1,4 @@
-"user client";
+"use client";
 import React from "react";
 import { Map } from "../../components/Map";
 import { Navbar } from "../../components/Navbar";
