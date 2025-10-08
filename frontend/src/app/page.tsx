@@ -14,6 +14,8 @@ export default function Home() {
     console.log("Button clicked");
   };
 
+ 
+
   return (
     <div
       style={{
@@ -31,11 +33,16 @@ export default function Home() {
       <CustomImage
         src="/images/lightbug.png"
         alt="Lightbug"
+<<<<<<< Updated upstream
         width={500}
         height={500}
+=======
+        width={450}
+        height={450}
+>>>>>>> Stashed changes
         position="absolute"
         top={0}
-        right={600}
+        right={555}
         priority={true}
         className="lightbug-image"
       />
@@ -48,6 +55,7 @@ export default function Home() {
       <div style={{ marginTop: "20px" }}>
         <Button onClick={handleGetStarted}>Get Started</Button>
       </div>
+      
     </div>
   );
 }

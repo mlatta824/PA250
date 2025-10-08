@@ -1,6 +1,9 @@
 
+@import 'leaflet/dist/leaflet.css';
+
+
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(to bottom right, red, blue);
   --foreground: #76461b;
 }
 
@@ -13,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #76461b;
+    --background: linear-gradient(to bottom right, #dc0e0b, #dc0e0b, #fefdfd,  #1e3a8a,#1e3a8a, #fefdfd);
     --foreground: #ededed;
   }
 }
@@ -23,12 +26,15 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  position: absolute center;
   top: 0;
   left: 0;
 }
 
-body { background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+body { 
+  background: var(--background); 
+  color: var(--foreground); 
+  font-family: Arial, Helvetica, sans-serif; 
+}
 
 .lightbug-image {
   object-fit: contain;

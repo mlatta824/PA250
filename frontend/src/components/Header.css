@@ -1,0 +1,32 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5px;
+}
+
+.header-title {
+  font-size: 3rem; /* same as text-4xl */
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+}
+
+.header-subtext {
+  font-size: 1.5rem; /* same as text-xl */
+  font-weight: 600;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+}
+
+
+/* Outlined text styling for headers and subtext */
+.text-outline {
+  color: white; /* Fill color for the text */
+  -webkit-text-stroke: 1px black; /* Black outline */
+  text-stroke: 1px black; /* Wider browser support */
+}

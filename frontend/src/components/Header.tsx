@@ -1,15 +1,16 @@
 import React from "react";
+import "./Header.css"; // Import your new CSS file
 
 type HeaderParams = {
-    headerText: string;
-    subtext?: string;
-}
+  headerText: string;
+  subtext?: string;
+};
 
-export function Header({ headerText, subtext }: { headerText: string; subtext: string }) {
+export function Header({ headerText, subtext }: HeaderParams) {
   return (
-    <div className="flex flex-col items-center justify-center text-center space-y-2">
-      <h1 className="text-4xl font-bold">{headerText}</h1>
-      <p className="text-lg">{subtext}</p>
+    <div className="header-container">
+      <h1 className="header-title">{headerText}</h1>
+      <p className="header-subtext">{subtext}</p>
     </div>
   );
 }
