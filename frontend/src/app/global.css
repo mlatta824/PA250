@@ -29,3 +29,9 @@ html, body {
 }
 
 body { background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+
+.lightbug-image {
+  object-fit: contain;
+  pointer-events: none; 
+}
+

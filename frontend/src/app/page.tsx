@@ -6,9 +6,6 @@ import { Button } from "../components/Button";
 import { CustomImage } from "../components/Image";
 import "./global.css";
 
-
-
-
 export default function Home() {
   const router = useRouter();
 
@@ -20,14 +17,30 @@ export default function Home() {
   return (
     <div
       style={{
+        position: "relative",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
         textAlign: "center",
+        overflow: "hidden",
       }}
     >
+     
+      <CustomImage
+        src="/images/lightbug.png"
+        alt="Lightbug"
+        width={300}
+        height={300}
+        position="absolute"
+        top={0}
+        right={600}
+        priority={true}
+        className="lightbug-image"
+      />
+
+      
       <Header
         headerText="Illuminating Our History"
         subtext="Look at the amazing history of our state light up!"
@@ -35,17 +48,6 @@ export default function Home() {
       <div style={{ marginTop: "20px" }}>
         <Button onClick={handleGetStarted}>Get Started</Button>
       </div>
-      <CustomImage
-        src="/images/lightbug.png"
-        alt="Lightbug"
-        width={300}
-        height={300}
-        className="w-64 h-64 object-cover rounded-lg"
-        priority={true}
-        />
     </div>
   );
 }
-
-
-
