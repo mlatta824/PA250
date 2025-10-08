@@ -31,8 +31,8 @@ export default function Home() {
       <CustomImage
         src="/images/lightbug.png"
         alt="Lightbug"
-        width={300}
-        height={300}
+        width={500}
+        height={500}
         position="absolute"
         top={0}
         right={600}
