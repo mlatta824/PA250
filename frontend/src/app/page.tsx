@@ -14,30 +14,28 @@ export default function Home() {
     console.log("Button clicked");
   };
 
- 
+  
+
+
 
   return (
     <div
       style={{
-        position: "relative",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
-        height: "100vh",
+        minHeight: "100vh",
         textAlign: "center",
-        overflow: "hidden",
       }}
     >
      
       <CustomImage
         src="/images/lightbug.png"
         alt="Lightbug"
-        width={450}
-        height={450}
-        position="absolute"
-        top={0}
-        right={555}
+        width={300}
+        height={300}
+        
         priority={true}
         className="lightbug-image"
       />

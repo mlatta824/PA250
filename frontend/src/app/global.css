@@ -22,16 +22,18 @@
 }
 
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 0;
-  left: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden; 
 }
 
 body { 
   background: var(--background); 
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--foreground); 
   font-family: Arial, Helvetica, sans-serif; 
 }

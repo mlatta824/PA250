@@ -9,28 +9,27 @@ interface CustomImageProps {
   height?: number;
   className?: string;
   priority?: boolean;
-  position?: "absolute" | "relative" | "fixed" | "static" | "sticky";
   top?: number | string;
   right?: number | string;
   fill?: boolean;
-}
 
+  
+ 
+}
 export const CustomImage: React.FC<CustomImageProps> = ({
   src,
   alt,
-  width = 300,
-  height = 300,
+  width = 0,
+  height = 0,
   className = "",
   priority = false,
-  position,
-  top,
-  right,
   fill = false,
+  
 }) => {
   const style: React.CSSProperties = {
-    position,
-    top,
-    right,
+    width: width || undefined,
+    height: height || undefined, 
+    overflow: "hidden",
   };
 
   return (
