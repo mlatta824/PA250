@@ -9,12 +9,14 @@ import { Header } from "../../../components/Header";
 
 export default function signup(){
     const router = useRouter();
+    const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    
 
     const handleSignup = (ev: React.FormEvent) => {
         ev.preventDefault();
-        console.log("Sign Up button clicked with:", {username, password});
+        console.log("Sign Up button clicked with:", {email, username, password});
 
     }
 
@@ -105,6 +107,15 @@ export default function signup(){
                 subtext="Join to illuminate our history."
             />
             <form onSubmit = {handleSignup} className = "signup-form">
+                <input
+                    className = "auth-input"
+                    type = "text"
+                    placeholder = "Email"
+                    value = {username}
+                    onChange = {(ev) => setEmail(ev.target.value)}
+                    required
+                />
+                <br />
                 <input
                     className = "auth-input"
                     type = "text"
