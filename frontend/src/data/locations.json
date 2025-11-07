@@ -1,0 +1,26 @@
+[
+  {
+    "id": "custom-001",
+    "markername": "Sewickley Heights History Center",
+    "county": "Allegheny",
+    "dedicateddate": null,
+    "markertype": "Custom Site",
+    "location": "1901 Glen Mitchell Road, Sewickley, PA 15143",
+    "markertext": "Preserves and shares the history of Sewickley Heights.",
+    "status": "True",
+    "latitude": "40.54488609184081",
+    "longitude": "-80.15144714518293"
+  },
+  {
+    "id": "custom-002",
+    "markername": "Western Pennsylvania Model Railroad Museum",
+    "county": "Allegheny",
+    "dedicateddate": null,
+    "markertype": "Custom Site",
+    "location": "5507 Lakeside Drive, Gibsonia, PA 15044",
+    "markertext": "Features a large, detailed model railroad layout depicting the railroad history of Western Pennsylvania.",
+    "status": "True",
+    "latitude": "40.63106330533339",
+    "longitude": "-79.97288077200734"
+  }
+]

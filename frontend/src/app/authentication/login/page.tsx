@@ -102,7 +102,7 @@ export default function signup(){
         
             <Header
                 headerText="Ready to jump back in?"
-                subtext="Let's go!!!"
+                subtext="Sign in to your existing account!"
             />
             <form onSubmit = {handleLogin} className = "Login-form">
                 <input

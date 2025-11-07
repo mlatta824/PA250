@@ -4,9 +4,9 @@ import React from "react";
 
 type Marker = {
   id: string;
-  name: string; // The title of the marker
-  county: string;
-  markertext: string; // The description on the marker
+  name: string;
+  description?: string;
+  location?: string;
   latitude: string;
   longitude: string;
 };
@@ -48,14 +48,23 @@ export default function LocationsPage() {
   }
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-6 text-center">Pennsylvania Historical Markers</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className = "container mx-auto p-8">
+
+      <style jsx>{`
+      .title-outline {
+          color: black;
+        }
+      `}
+      </style>
+
+
+      <h1 className="title-outline text-4xl font-bold mb-6 text-center">Pennsylvania Historical Markers</h1>
+      <div className="title-outline grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {markers.map((marker) => (
           <div key={marker.id} className="border rounded-lg p-4 shadow-md bg-white text-gray-800">
             <h2 className="text-xl font-bold mb-2">{marker.name}</h2>
-            <p className="text-sm font-semibold text-gray-600 mb-2">County: {marker.county}</p>
-            <p className="text-gray-700">{marker.markertext}</p>
+            <p className="text-sm font-semibold text-gray-600 mb-2">Location: {marker.location}</p>
+            <p className="text-gray-700">{marker.description}</p>
           </div>
         ))}
       </div>

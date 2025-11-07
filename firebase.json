@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "PA250",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,22 +1,61 @@
 import { NextResponse } from 'next/server';
 
-const PA_MARKERS_API_URL = 'https://data.pa.gov/resource/xt8f-pzzz.json'; // PA Markers
+import customLocationsData from '../../../data/locations.json';
+
+// Interface for locations
+interface Location {
+  id: string;
+  name: string;
+  description?: string;
+  location?: string;
+  latitude: string;
+  longitude: string;
+}
+
+
+// API structure
+interface PaMarker {
+  id: string;
+  markername: string;
+  county: string;
+  markertext: string;
+  latitude: string;
+  longitude: string;
+  dedicateddate?: string;
+  markertype?: string;
+  location?: string;
+  status?: string;
+}
+
+const customLocations: PaMarker[] = customLocationsData as PaMarker[];
+
 
 
 export async function GET() {
+    let locations: Location[] = [];
+
+
     try {
-        const response = await fetch(PA_MARKERS_API_URL);
+        locations = customLocations
+        .filter(marker => marker.latitude && marker.longitude) 
+        .map(marker =>({
 
-        if (!response.ok) {
-            throw new Error('Failed to fetch data from PA Markers API: {status: 500}');
-        }
+            id: marker.id,
+            name: marker.markername,
+            description: marker.markertext,
+            location: marker.location,
+            latitude: marker.latitude,
+            longitude: marker.longitude
 
-        const locations = await response.json();
+        }));
+    } catch(error) {
+        console.error('Error processing locations', error);
 
-        return NextResponse.json(locations);
-
-    } catch (error) {
-        return new NextResponse('Failed to fetch data from PA Markers API' , {status: 500});
+        return new NextResponse('Failed to process locations', { status: 500 });
     }
+
+    return NextResponse.json(locations);
+
+
 
 }
