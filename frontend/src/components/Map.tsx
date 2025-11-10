@@ -33,7 +33,7 @@ export function Map() {
   // Track whether the map data is still loading.
   const [loading, setLoading] = useState(true);
   // Center coordinates for the PA Turnpike (roughly in the middle of Pennsylvania).
-  const paTurnpikeCenter: [number, number] = [40.5, -77.5];
+  const paTurnpikeCenter: [number, number] = [40.5, -77.5]; // might have to change.
 
 
   // --- FETCH DATA FROM API WHEN COMPONENT LOADS ---
@@ -44,12 +44,14 @@ export function Map() {
     async function fetchData() {
       try {
         // Call your Next.js API route, which fetches data from the PA data portal.
-        const res = await fetch("/api/locations");
+        const res = await fetch("/api/locations"); // might have to change.
+
         // Convert the JSON response into a JavaScript array.
-        const data: Location[] = await res.json();
+        const data: Location[] = await res.json(); 
+
 
         // Log the first few records to inspect what the data looks like (for debugging).
-        console.log("PA locations sample (first 3):", data.slice(0, 3));
+        console.log("PA locations sample (first 3):", data.slice(0, 3));  
         if (data.length) console.log("first record keys:", Object.keys(data[0]));
 
         // Filter out any entries missing valid latitude/longitude values.
@@ -58,7 +60,7 @@ export function Map() {
             loc.latitude &&
             loc.longitude &&
             !isNaN(Number(loc.latitude)) &&
-            !isNaN(Number(loc.longitude))
+            !isNaN(Number(loc.longitude)) 
         );
 
         // Only update state if the component is still active.
@@ -95,7 +97,7 @@ export function Map() {
     >
       {/* The actual map tiles (visual layer) from OpenStreetMap */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'   // might have to change.
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
@@ -104,6 +106,7 @@ export function Map() {
         // Convert string lat/lng to numbers for Leaflet.
         const lat = Number(loc.latitude);
         const lng = Number(loc.longitude);
+        
 
         // Skip any markers that don’t have valid coordinates.
         if (isNaN(lat) || isNaN(lng)) return null;
