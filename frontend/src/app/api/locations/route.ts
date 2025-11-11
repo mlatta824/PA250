@@ -10,6 +10,7 @@ interface Location {
   location?: string;
   latitude: string;
   longitude: string;
+  imageUrl?: string;
 }
 
 
@@ -25,6 +26,7 @@ interface PaMarker {
   markertype?: string;
   location?: string;
   status?: string;
+  imageUrl?: string;
 }
 
 const customLocations: PaMarker[] = customLocationsData as PaMarker[];
@@ -45,7 +47,8 @@ export async function GET() {
             description: marker.markertext,
             location: marker.location,
             latitude: marker.latitude,
-            longitude: marker.longitude
+            longitude: marker.longitude,
+            imageUrl: marker.imageUrl
 
         }));
     } catch(error) {

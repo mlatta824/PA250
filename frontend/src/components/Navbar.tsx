@@ -25,6 +25,7 @@ export function Navbar() {
       <div className="navbar-right">
         <button onClick={() => router.push("/")} className="nav-button">Home</button>
         <button onClick={() => router.push("/about")} className="nav-button">About</button>
+        <button onClick={() => router.push("/badges")} className = "nav-button">Badges</button>
         <button onClick={() => router.push("/mapping")} className="nav-button">Map</button>
         <button onClick={() => router.push("/authentication/login")} className="nav-button">Login</button>
         <button onClick={() => router.push("/authentication/signup")} className="nav-button">Sign Up</button>

@@ -28,7 +28,7 @@ export default function About(){
 
             {/* Text box with centered content */}
             <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto relative z-20">
-                <p className="text-2xl leading-relaxed text-center" style={{ color: '#000000' }}>
+                <p className="text-2xl leading-relaxed text-center" style={{ color: '#000000ff' }}>
                     We are going to be creating a web application for a PA250 project that will use an innovative technology of NCF tags that users will be able to scan. The NFC tag will have a URL embedded into the tag, and it bring up a this website that will give people the ability to access information about the history of the PA turnpike. The mascot that is being used is a lightning bug.
                 </p>
             </div>
