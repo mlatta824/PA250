@@ -1,6 +1,6 @@
 
 
-const isBuild = process.env.NODE_ENV === 'prudction';
+const isBuild = process.env.NODE_ENV === 'production';
 
 
 
