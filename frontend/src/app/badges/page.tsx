@@ -3,66 +3,26 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "../../components/Header";
 import Image from "next/image";
+import { getProcessedLocations, ProcessedLocation } from "../../lib/Locations";
 
 
-const TOTAL_BADGES = 27
+const TOTAL_BADGES = 27;
 
-type Location = {
-  id: string;
-  name: string;
-  description?: string;
-  location?: string;
-  latitude: string;
-  longitude: string;
-  imageUrl?: string;
-};
+
+type Location = ProcessedLocation;
 
 
 
 export default function BadgesPage() {
-    const [locations, setLocations] = useState<Location[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+
+    const locations: Location[] = getProcessedLocations();
 
     const [selectedBadge, setSelectedBadge] = useState<Location | null>(null);
 
-
-    useEffect(() => {
-        const fetchLocations = async () => {
-            try {
-                
-                const response = await fetch('/api/locations');
-                if (!response.ok) {
-
-                    throw new Error('Failed to fetch locations');
-                }
-
-                const data: Location[] = await response.json();
-                setLocations(data);
-
-            } catch (err: any) {
-            setError(err.message);
-            } finally {
-
-            setIsLoading(false);
-            }
-        };
-
-        fetchLocations();
-    }, []);
-
+    
     const unlockedBadgeLen = locations.length;
-    const lockedBadgeLen = TOTAL_BADGES - unlockedBadgeLen
+    const lockedBadgeLen = TOTAL_BADGES - unlockedBadgeLen;
 
-    if(isLoading){
-
-        return <div className = "text-center p-10">Loading Badges...</div>
-    }
-
-    if (error) {
-
-        return <div className="text-center p-10 text-red-500">Error, failed to load badges: {error}</div>;
-    }
 
     return (
         <div className="container mx-auto p-8">
