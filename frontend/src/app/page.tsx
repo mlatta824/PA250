@@ -46,7 +46,7 @@ export default function Home() {
         subtext="Look at the amazing history of our state light up!"
       />
       <div style={{ marginTop: "20px" }}>
-        <Button onClick={handleGetStarted}>Get Started</Button>
+        <Button onClick={handleGetStarted} className="auth-button">Get Started</Button>
       </div>
       
     </div>
