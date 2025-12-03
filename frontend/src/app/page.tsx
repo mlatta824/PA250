@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.push("/login");
+    router.push("/authentication/signup");
     console.log("Button clicked");
   };
 
