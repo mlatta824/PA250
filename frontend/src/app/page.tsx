@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.push("/start");
+    router.push("/login");
     console.log("Button clicked");
   };
 
@@ -31,7 +31,7 @@ export default function Home() {
     >
      
       <CustomImage
-        src="/images/lightbug.png"
+        src="images/lightbug.png"
         alt="Lightbug"
         width={300}
         height={300}

@@ -14,7 +14,7 @@ export default function About(){
             {/* Lightbug image on the center left */}
             <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
                 <Image
-                    src="/images/lightbug.png"
+                    src="images/lightbug.png"
                     alt="Lightning Bug Mascot"
                     width={200}
                     height={200}

@@ -15,7 +15,7 @@
   {
     "id": "custom-002",
     "markername": "Western Pennsylvania Model Railroad Museum",
-    "imageUrl": "/images/western_pa_railroad.jpg",
+    "imageUrl": "images/western_pa_railroad.JPG",
     "county": "Allegheny",
     "dedicateddate": null,
     "markertype": "Custom Site",
@@ -28,7 +28,7 @@
   {
     "id": "custom-003",
     "markername": "Kerr Memorial Museum",
-    "imageUrl": "/images/kerr_memorial_head.jpg",
+    "imageUrl": "images/kerr_memorial_head.JPG",
     "county": "Allegheny",
     "dedicateddate": null,
     "markertype": "Custom Site",

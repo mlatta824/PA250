@@ -1,18 +1,21 @@
 
+const isProd = process.env.NODE_ENV === 'production';
 
-const isBuild = process.env.NODE_ENV === 'production';
+const repoName = 'PA250';
 
-
-
-
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-    output: 'export',
+  // Enable static export for GitHub Pages
+  output: 'export',
 
-    basePath: isBuild ?  '/PA250' : undefined,
-    assetPrefix: isBuild ? '/PA250/' : undefined,
-    images: {
-        unoptimized: true,
-    },
+  basePath: isProd ? `/${repoName}` : undefined,
+  assetPrefix: isProd ? `/${repoName}/` : undefined,
+
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

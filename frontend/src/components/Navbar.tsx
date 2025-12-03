@@ -13,7 +13,7 @@ export function Navbar() {
     <nav className="navbar">
       <div className="navbar-left" onClick={() => router.push("/")}>
         <CustomImage
-          src="/images/lightbug.png"
+          src="images/lightbug.png"
           alt="Lightbug Logo"
           width={60}
           height={60}
